@@ -11819,7 +11819,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -12004,7 +12004,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Total number of records</span>
@@ -12017,7 +12017,7 @@ div#notebook {
 <span class="n">n_at_most_50k</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;income&#39;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;&lt;=50K&quot;</span><span class="p">])</span>
 
 <span class="c1"># TODO: Percentage of individuals whose income is more than $50,000</span>
-<span class="n">greater_percent</span> <span class="o">=</span> <span class="mi">100</span><span class="o">*</span><span class="n">n_greater_50k</span><span class="o">/</span><span class="n">n_records</span>
+<span class="n">greater_percent</span> <span class="o">=</span> <span class="mf">100.0</span><span class="o">*</span><span class="n">n_greater_50k</span><span class="o">/</span><span class="n">n_records</span>
 
 <span class="c1"># Print the results :.2f</span>
 <span class="k">print</span> <span class="s2">&quot;Total number of records: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n_records</span><span class="p">)</span>
@@ -12041,7 +12041,7 @@ div#notebook {
 <pre>Total number of records: 45222
 Individuals making more than $50,000: 11208
 Individuals making at most $50,000: 34014
-Percentage of individuals making more than $50,000: 24%
+Percentage of individuals making more than $50,000: 24.7843969749%
 </pre>
 </div>
 </div>
@@ -13219,27 +13219,27 @@ It is a ratio of true positives(words classified as spam, and which are actually
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> - reference: Introduction to Machine Learning with Python by Andreas C Muller &amp; Sarah Guido
+<p><strong>Answer: </strong> - reference: Introduction to Machine Learning with Python by Andreas C Muller &amp; Sarah Guido and <a href="https://elitedatascience.com/machine-learning-algorithms">https://elitedatascience.com/machine-learning-algorithms</a>
 Support Vector Machines (SVM)</p>
 <ul>
 <li>Describe one real-world application in industry where the model can be applied. One example of using SVMs in the medical industry is to diagnose diabetes, classifying patients who are at risk (<a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-10-16">https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-10-16</a>).</li>
 <li>What are the strengths of the model; SVMs are powerful models and perform well on a variety of datasets. When does it perform well? SVMs work well on low-dimensional and high-dimensional datasets. </li>
-<li>What are the weaknesses of the model; when does it perform poorly? SVMs perform better with datasets &lt; 10,000 data points, so a dataset of this size may take longer. They also require more parameter tuning and preprocessing of the data.</li>
-<li>What makes this model a good candidate for the problem, given what you know about the data? With 45K samples, an SVM may take longer, but it can work fine in predictions. Additionally, we have performed adequate preprocessing to help it perform better.</li>
+<li>What are the weaknesses of the model; when does it perform poorly? SVMs perform better with datasets &lt; 10,000 data points, so a dataset of this size may take longer and be more inefficient. They also require more parameter tuning and preprocessing of the data.</li>
+<li>What makes this model a good candidate for the problem, given what you know about the data? With 45k samples, an SVM may take longer, but it can work fine in predictions. Additionally, we have performed adequate preprocessing to help it perform better.</li>
 </ul>
 <p>Gradient Boosted Decision Tree</p>
 <ul>
 <li>Describe one real-world application in industry where the model can be applied. Quality assurance in manufacturing (determining whether or not a part will fail post production).</li>
-<li>What are the strengths of the model; when does it perform well? Gradient boosted decision trees are among the most powerful models for ML. They work well without scaling and on a mixture of binary and continuous features.</li>
-<li>What are the weaknesses of the model; when does it perform poorly? They require careful tuning of parameters and may take a long time to train. They don't work well on high-dimensional sparse data.</li>
-<li>What makes this model a good candidate for the problem, given what you know about the data? Since we have a fairly large dataset and a mixture of binary and continuous features, I expect GBDT to work well for this problem. In addition, we will have the opportunity to carefully tune the parameters to improve performance.</li>
+<li>What are the strengths of the model; when does it perform well? Gradient boosted decision trees are among the most powerful models for ML. They work well without scaling and on a mixture of binary and continuous features. Ensembles can learn nonlinear relationships and are robust to outliers.</li>
+<li>What are the weaknesses of the model; when does it perform poorly? They require careful tuning of parameters and may take a long time to train. They don't work well on high-dimensional sparse data. They can also be prone to overfitting.</li>
+<li>What makes this model a good candidate for the problem, given what you know about the data? Since we have a fairly large dataset (with 45k rows and 100+ features) and a mixture of binary and continuous features, I expect GBDT to work well for this problem. This is because Gradient Boosted DTs can generally perform well with binary and/or continuous features and handle larger datasets. In addition, we will have the opportunity to carefully tune the parameters to improve performance.</li>
 </ul>
 <p>Logistic Regression</p>
 <ul>
 <li>Describe one real-world application in industry where the model can be applied. Logistic Regression can be used to predict the likelyhood of breast cancer.</li>
 <li>What are the strengths of the model; when does it perform well? Linear models, like Logistic Regression are very fast to train and fast to predict. They can scale to very large datasets and work well with sparse data. They are easy to understand how a prediction is made.</li>
-<li>What are the weaknesses of the model; when does it perform poorly? They may not perform as well as other models for low-dimensional data.</li>
-<li>What makes this model a good candidate for the problem, given what you know about the data? Considering this is a larger dataset, this will be a good model to try and should train and predict quicker than the others.</li>
+<li>What are the weaknesses of the model; when does it perform poorly? They may not perform as well as other models for low-dimensional data or with binary data. Logistic Regression performs better on data that is linear or is roughly linearly separable.</li>
+<li>What makes this model a good candidate for the problem, given what you know about the data? Considering this is a larger dataset, this will be a good model to try and should train and predict quicker than the others. Logistic Regression is also generally recommended as a good starting point for most machine learning problems.</li>
 </ul>
 
 </div>
@@ -14180,8 +14180,8 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong></p>
-<p>Based on the results, I can see that the F-score with 100% of the training set is highest with the Gradient Boosting Classifier. In addition, this one was able to train and predict quite quickly, especially compared to the very slow SVM. This algorithm produces the highest accuracy and F-score on all accounts and in a quick manner, so we can trust that it is the best model for the job.</p>
+<p><strong>Answer: </strong>
+Based on the results, I can see that when using 100% of the dataset, the Gradient Booosted Classifier performs best against all metrics (speed, accuracy, and F-score) against the training and testing set. The Gradient Boosted Classifier appears to not be overfitting or underfitting, but predicting the results better than the SVM and Logistic Regression, and also faster. The algorithm performed well with both the binary and continuous features in the dataset and was very efficient with the large dataset.</p>
 
 </div>
 </div>
@@ -14205,9 +14205,9 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> - reference: Introduction to Machine Learning with Python by Andreas C Muller &amp; Sarah Guido</p>
-<p>The Gradient Boosted Decision Tree combines multiple decision trees to create a more powerful model. To train the model, the algorithm builds trees in a serial manner, where each tree tries to correct the mistakes of the previous one. Gradient boosted trees usually use very shallow trees, (making 1-5 splits or decisions), which makes the model efficient.</p>
-<p>To make a prediction, the model asks the series of questions about the data point to try to place it correctly.</p>
+<p><strong>Answer: </strong> - reference: Introduction to Machine Learning with Python by Andreas C Muller &amp; Sarah Guido and <a href="https://elitedatascience.com/machine-learning-algorithms">https://elitedatascience.com/machine-learning-algorithms</a> and <a href="https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/boosted-decision-tree-regression">https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/boosted-decision-tree-regression</a></p>
+<p>The Gradient Boosted Decision Tree is basically a series of decision trees. To create the model, the algorithm creates a series of questions to ask of the data to create the most separating divides. It continues to ask questions that will help classify the data into the specified number of feature groups. As opposed to just a regular decision tree, a boosted decision tree learns by fitting the residual of the trees that preceded it.</p>
+<p>To train the model, the algorithm builds trees in a serial manner, where each tree tries to correct the mistakes of the previous one. Gradient boosted trees usually use very shallow trees, (making 1-5 splits or decisions), which makes the model efficient. To make a prediction, the model asks the series of questions about the data point to try to place it correctly.</p>
 
 </div>
 </div>
